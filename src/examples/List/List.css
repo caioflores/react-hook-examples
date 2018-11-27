@@ -1,0 +1,8 @@
+.Row {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+}
