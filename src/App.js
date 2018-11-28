@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import ListHooks from './examples/List/ListHooks'
 import List from './examples/List/List'
-import Loading from './examples/Loading/LoadingHooks'
+import LoadingHooks from './examples/Loading/LoadingHooks'
+import Loading from './examples/Loading/Loading'
+
+const TIMEOUT = 5000
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false })
-    }, 3000)
+    }, TIMEOUT)
   }
 
   render() {
@@ -23,17 +26,24 @@ class App extends Component {
       <div className="App">
         <div className="Row">
           <div className="GridColumn">
+            <h1>Hooks</h1>
             <div className="Container">
               <ListHooks />
             </div>
           </div>
           <div className="GridColumn">
+            <h1>Not hooks</h1>
             <div className="Container">
               <List />
             </div>
           </div>
         </div>
         <div className="Row">
+          <div className="GridColumn">
+            <div className="Container">
+              <LoadingHooks value={this.state.loading} />
+            </div>
+          </div>
           <div className="GridColumn">
             <div className="Container">
               <Loading value={this.state.loading} />

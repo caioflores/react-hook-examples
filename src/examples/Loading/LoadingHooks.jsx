@@ -3,10 +3,13 @@ import './Loading.css'
 
 function LoadingHooks(props) {
   const [loading, setLoading] = useState(props.value)
-  
-  useEffect(() => {
-    setLoading(props.value)
-  }, [props]);
+
+  useEffect(
+    () => {
+      setLoading(props.value)
+    },
+    [props.value] // Just re-render if this changes
+  )
 
   if (loading) {
     return (
