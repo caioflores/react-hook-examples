@@ -25,13 +25,13 @@ class List extends Component {
   render() {
     return (
       <div className="List">
-        <div className="Row">
+        <div className="ListRow">
           <input
             value={this.state.firstName}
             onChange={e => this.handleFirstNameChange(e)}
           />
         </div>
-        <div className="Row">
+        <div className="ListRow">
           <input
             value={this.state.secondName}
             onChange={e => this.handleSecondNameChange(e)}

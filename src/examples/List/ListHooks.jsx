@@ -1,5 +1,4 @@
-import React from 'react'
-import useFormInput from '../Input/InputHooks'
+import React, { useState } from 'react'
 import './List.css'
 
 function ListWithHooks(props) {
@@ -8,14 +7,26 @@ function ListWithHooks(props) {
 
   return (
     <div className="List">
-      <div className="Row">
+      <div className="ListRow">
         <input {...firstName} />
       </div>
-      <div className="Row">
+      <div className="ListRow">
         <input {...secondName} />
       </div>
     </div>
   )
+}
+
+const useFormInput = (initialValue, type = 'text') => {
+  const [value, setValue] = useState(initialValue)
+
+  const handleChange = e => setValue(e.target.value)
+
+  return {
+    value,
+    type,
+    onChange: handleChange
+  }
 }
 
 export default ListWithHooks
